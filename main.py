@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
         # load and train model if needed
         if train_model:
-            model, batch_size = DL_model.CNN(dataset, X_profiling.shape[1], aug_level)
+            model, batch_size = DL_model.CNN(X_profiling.shape[1], aug_level)
             callback = [OneCycleLR(len(X_profiling), batch_size, 5e-3, end_percentage=0.2, scale_percentage=0.1, maximum_momentum=None, minimum_momentum=None, verbose=True)]
             model.fit(
                 x=X_profiling, 
